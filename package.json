@@ -1,0 +1,24 @@
+{
+  "name": "community-food-waste-reduction",
+  "version": "1.0.0",
+  "description": "A platform for reducing food waste by connecting local businesses with surplus food to community members.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
