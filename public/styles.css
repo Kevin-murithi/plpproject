@@ -1,54 +1,79 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
-
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+.logo{
+    color: rgb(28, 133, 72);
+    font-size: 36px;
+    font-weight: 700;
+}
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
     text-align: center;
 }
 
 .navbar a {
-    color: #fff;
+    color: rgb(9, 15, 24);
     text-decoration: none;
     padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 h1, h2 {
     text-align: center;
 }
-
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.welcomeTitle{
+    margin-top: 3rem;
+    font-size: 52px;
+    font-weight: 900;
+    max-width: 700px;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.welcomeText{
+    font-size: 1.5rem;
+    margin-top: 2rem;
 }
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.authLinks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+.authLinks a{
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    padding: .65rem 1.5rem;
+    background-color: rgb(192, 188, 188);
+    color: black;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 .5rem;
 }
 
 button:hover {
@@ -59,4 +84,72 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px 0;
+}
+
+
+.regContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+}
+
+.userRegForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2.5rem 2%;
+    background-color: rgb(227, 233, 233);
+    border-radius: 10px;
+}
+
+.formTitle{
+    font-size: 1.45rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    opacity: .8;
+}
+
+.formField{
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.85rem;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(30, 30, 31);
+}
+
+input {
+    width: 100%;
+    padding: 16px 6px;
+    border: 1px solid #9e9d9d;
+    background-color: rgb(240, 247, 247);
+    border-radius: 10px;
+    margin-top: .5rem;
+}
+
+.userRegForm button{
+    padding: .75rem 2.5rem;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: rgb(25, 211, 108);
+    margin-top: 1.5rem;
+    transition: .3s ease;
+}
+.userRegForm button:hover{
+    background-color: rgb(48, 236, 133);
+    cursor: pointer;
 }
