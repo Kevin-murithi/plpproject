@@ -2,12 +2,7 @@
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevent default form submission
 
-    // Check if the Terms of Service are accepted
-    const termsChecked = document.getElementById('terms').checked;
-    if (!termsChecked) {
-        alert('You must accept the Terms of Service before registering.');
-        return;
-    }
+   
 
      // Get form input values
      const username = document.getElementById('username').value;
@@ -33,7 +28,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
         if (response.ok) {
             // Registration successful, redirect to login page
             alert('Registration successful! Please log in.');
-            window.location.href = 'login.html'; // Correct redirection to login page
+            response.render(200, '/signIn'); // Correct redirection to login page
         } else {
             // Handle failed registration
             const errorText = await response.text();

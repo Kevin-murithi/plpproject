@@ -10,6 +10,7 @@ const jsonParser = bodyParser.json();
 router.get('/', loadPages.indexPage);
 router.get('/signUP', loadPages.signUP);
 router.get('/signIn', loadPages.signIn);
+router.get('/dashboard', loadPages.dashboard);
 
 router.post('/register', authController.register);
 router.post('/api/users/login', authController.login);

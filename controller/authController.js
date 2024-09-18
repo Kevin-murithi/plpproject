@@ -25,18 +25,18 @@ module.exports.register = async (req, res) => {
     console.error("Error during registration:", error.message);
     res.status(500).send('Internal Server Error');
   }
-}
+};
 
 module.exports.login = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
-        return res.status(400).json({ success: false, message: 'Username and password are required' });
+    if (!email || !password) {
+        return res.status(400).json({ success: false, message: 'email and password are required' });
     }
 
-    const sql = 'SELECT * FROM Users WHERE username = ?';
-    const [results] = await db.promise().query(sql, [username]);
+    const sql = 'SELECT * FROM Users WHERE email = ?';
+    const [results] = await db.promise().query(sql, [email]);
 
     if (results.length > 0) {
         const match = await bcrypt.compare(password, results[0].password);
@@ -44,7 +44,7 @@ module.exports.login = async (req, res) => {
             req.session.user_id = results[0].user_id;
             res.json({ success: true });
         } else {
-            res.status(401).json({ success: false, message: 'Invalid Username or Password!' });
+            res.status(401).json({ success: false, message: 'Invalid Usernames or Password!' });
         }
     } else {
         res.status(401).json({ success: false, message: 'Invalid Username or Password!' });
@@ -68,7 +68,7 @@ module.exports.profile = async (req, res) => {
       }
       res.status(200).json(results[0]);
   });
-}
+};
 
 module.exports.createFood = async (req, res) => {
   const { name, amount, location } = req.body;
