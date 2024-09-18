@@ -24,3 +24,7 @@ module.exports.bizsignUP = async (_req, res) => {
 module.exports.bizsignIn = async (_req, res) => {
   res.render('loginbiz', {pageTitle: 'bizsignIn'});
 }
+
+module.exports.bizdashboard = async (_req, res) => {
+  res.render('bizdashboard', {pageTitle: 'bizdashboard'});
+}

@@ -7,7 +7,6 @@ const Handlebars = require('handlebars');
 const dotenv = require('dotenv');
 const db = require('./models/db');
 const authRoutes = require("./routes/authRoutes");
-const bizauthroutes = require("./routes/bizauthRoutes");
 
 dotenv.config();
 const app = express();
@@ -38,7 +37,6 @@ app.use(session({
   cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 } // Session lasts for 1 day
 }));
 app.use(authRoutes);
-app.use(bizauthroutes);
 
 const PORT = process.env.PORT || 8000;
 
